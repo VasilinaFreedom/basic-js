@@ -21,3 +21,34 @@ function transform(/* arr */) {
 module.exports = {
   transform
 };
+
+function transform(arr){
+
+  if(!Array.isArray(arr)){throw Error("'arr' parameter must be an instance of the Array!")}
+  let arr1=[]
+  let arr2= arr1.concat(arr)
+  let newArr=[]
+    arr2.forEach((item,index)=>{
+       let i = index
+    if(item=='--discard-next'){
+      arr2[i+1]='next'
+      newArr.push(item)
+    }else if(item=='--double-prev'){
+      item=arr2[i-1]
+      newArr.push(item)
+     }else if(item=='--double-next'){
+      item=arr2[i+1]
+      newArr.push(item)
+    }else if(item=='--discard-prev'){
+      // arr2[i-1]='prev'
+      // newArr.push(item)
+      // newArr.pop(item)
+      newArr.pop(item)
+    }else{
+      newArr.push(item)
+    }})
+    newArr.forEach(item=>{
+    if(typeof item==='number'){
+      arr1.push(item)}})
+    return arr1
+    }

@@ -21,3 +21,15 @@ function createDreamTeam(/* members */) {
 module.exports = {
   createDreamTeam
 };
+
+function createDreamTeam(members){
+  if(!Array.isArray(members)){return false}
+   let newArr = []
+   members.forEach(item =>{
+      if(typeof item==='string'){
+      item=item.replace(/\s/g, '').toUpperCase()
+      newArr.push(item[0])
+    } 
+  })
+  return newArr.sort().join('')
+}

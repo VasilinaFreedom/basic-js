@@ -22,3 +22,16 @@ function countCats(/* matrix */) {
 module.exports = {
   countCats
 };
+
+function countCats(array){
+  let newArr = array.flat()
+  let count = 0
+  newArr.forEach(item =>{
+    if(item==='^^'){
+      count++
+    } else{
+      count=count
+    }
+  })
+  return count
+}

@@ -22,3 +22,13 @@ class DepthCalculator {
 module.exports = {
   DepthCalculator
 };
+
+function calculateDepth(arr) {
+  if (!Array.isArray(arr))
+      return 0;
+
+  let depth = 0;
+  for (let item of arr)
+      depth = Math.max(depth, calculateDepth(item));
+  return 1 + depth;
+}
