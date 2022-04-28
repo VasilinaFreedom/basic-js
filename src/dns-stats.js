@@ -30,3 +30,6 @@ function getDNSStats(/* domains */) {
 module.exports = {
   getDNSStats
 };
+// function getDNSStats(domains){
+  
+// }
