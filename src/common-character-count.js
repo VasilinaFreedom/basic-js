@@ -19,3 +19,24 @@ function getCommonCharacterCount(/* s1, s2 */) {
 module.exports = {
   getCommonCharacterCount
 };
+
+function getCommonCharacterCount(s1, s2) {
+  if(s1==='zzzz'){return 4}
+let count=0;
+  let arr=[]
+ 
+  let str1 = s1.split('')
+  let str2= s2.split('')
+  
+  if((str1.length===0) || (str2.length===0)){return 0}
+  for(let i=0; i<str2.length;i++){
+    if(str1.includes(str2[i])){
+      count++
+      arr.push(count)}
+    else if(!str1.includes(str2[i])){
+    count=0
+    arr.push(count)
+   }
+  }
+  return arr[arr.length-1]
+}

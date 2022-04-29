@@ -23,3 +23,28 @@ function repeater(/* str, options */) {
 module.exports = {
   repeater
 };
+
+function repeater(str, options) {
+  const arr=Object.values(options)
+  console.log(arr)
+  let addi=(`${arr[2]}${arr[4]}`).repeat(arr[3]-1)
+  let addiSep=(`${addi}${arr[2]}`)
+  // return addiSep
+  return (`${str}${addiSep}${arr[1]}`).repeat(arr[0])
+  
+}
+
+function repeater(str, options) {
+  let op= `${options.separator}`
+  if(op=='undefined'){op='+'}
+ if(options.additionSeparator===undefined){options.additionSeparator='|'}
+  let addi=(`${options.addition}${options.additionSeparator}`).repeat(options.additionRepeatTimes-1)
+  let addiSep=(`${addi}${options.addition}`)
+
+  let strSep=(`${str}${addiSep}${op}`)
+  let result0 = strSep.repeat(options.repeatTimes-1)
+  let result=`${result0}${str}${addiSep}`
+  let res = result.replace(/undefined/gi, '')
+  return res
+
+}

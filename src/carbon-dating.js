@@ -25,3 +25,12 @@ function dateSample(/* sampleActivity */) {
 module.exports = {
   dateSample
 };
+
+function dateSample(sampleActivity) {
+  if (!Number(sampleActivity)) {return false};
+  if (typeof sampleActivity !== 'string') {return false};
+  if (parseFloat(sampleActivity) >= 15 || parseFloat(sampleActivity) <= 0) {
+    return false;}
+
+  return Math.ceil(Math.abs(Math.log(parseFloat(sampleActivity) / MODERN_ACTIVITY) * HALF_LIFE_PERIOD) / 0.693);
+}
