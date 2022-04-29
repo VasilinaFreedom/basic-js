@@ -19,3 +19,16 @@ function getSeason(/* date */) {
 module.exports = {
   getSeason
 };
+
+function getSeason(date) {
+  if (date === null || date === undefined ){return 'Unable to determine the time of year!'}
+  if (!date || !(date instanceof Date) || date.toString !== new Date().toString) {
+    throw new Error("Invalid date!")
+  } 
+  let month = date.getMonth()
+  // console.log(month)
+  if(month===0 || (month===1) || (month===11)){return 'winter'}
+  if(month>=2 && month<=4){return 'spring'}
+  if(month>=5 && month<=7){return 'summer'}
+  if(month>=8 && month<=10){return 'autumn'}
+}

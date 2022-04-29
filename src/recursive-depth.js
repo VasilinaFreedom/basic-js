@@ -23,12 +23,20 @@ module.exports = {
   DepthCalculator
 };
 
-function calculateDepth(arr) {
-  if (!Array.isArray(arr))
-      return 0;
+function calculateDepth(arr){ 
+  let count=1
+  let a=[]
+  for(let i=0; i<50; i++){
+  if(typeof arr[i]==='object'){
+    count++
+    arr=arr.flat(1)
+    a.push(arr[i])
+    
+  }
+}
+  //   console.log(typeof arr[5])
+  // return arr.flat(5)
+  // return count
+  return a
 
-  let depth = 0;
-  for (let item of arr)
-      depth = Math.max(depth, calculateDepth(item));
-  return 1 + depth;
 }
