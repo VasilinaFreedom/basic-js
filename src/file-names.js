@@ -23,3 +23,19 @@ function renameFiles(/* names */) {
 module.exports = {
   renameFiles
 };
+
+function renameFiles(names) {
+  let k = 1
+for(let i=0; i< names.length; i++){
+  let o=0
+  if(names[o]===names[i+1]){
+    names[i+1]=`${names[i+1]}(${k})`
+    k++
+  }else if(names[o+1]===names[o+3]){
+    // k=k-1
+    names[o+3]=`${names[o+3]}(1)`
+  
+ }
+}
+  return names
+}

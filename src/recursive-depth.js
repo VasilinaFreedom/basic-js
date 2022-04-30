@@ -23,20 +23,37 @@ module.exports = {
   DepthCalculator
 };
 
-function calculateDepth(arr){ 
-  let count=1
-  let a=[]
-  for(let i=0; i<50; i++){
-  if(typeof arr[i]==='object'){
-    count++
-    arr=arr.flat(1)
-    a.push(arr[i])
-    
-  }
-}
-  //   console.log(typeof arr[5])
-  // return arr.flat(5)
-  // return count
-  return a
+// const calculateDepth=(arr)=>{
+//   if (!Array.isArray(arr))
+//       return 0;
 
-}
+//   let count = 0;
+//   for (let item of arr)
+//       count = Math.max(count, calculateDepth(item));
+//   return 1 + count;
+// }
+
+// module.exports = class DepthCalculator {
+    // calculateDepth=( arr )=> {
+    //     let count = 1;
+    //     let depth = 0;
+
+    //     for (let key in arr) {
+    //         if (Array.isArray(arr[key])) {
+    //             count = this.calculateDepth(arr[key])
+    //             if (depth < count) depth = count;
+    //         }
+
+    //     }
+    //     return depth += 1;
+    // }
+
+// function calculateDepth(arr){
+//   if (!Array.isArray(arr))
+//       return 0;
+//   let count = 0;
+//   for (let item of arr)
+//       count = Math.max(count, calculateDepth(item));
+//   return 1 + count;
+// }
+
