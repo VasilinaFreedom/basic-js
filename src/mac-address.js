@@ -21,3 +21,27 @@ function isMAC48Address(/* n */) {
 module.exports = {
   isMAC48Address
 };
+
+function isMAC48Address(n) {
+  let str= n.replace(/-/gi, '')
+  let arr = []
+  for(let i=0; i<str.length;){
+    if(str[i]!=str[i+1]){
+    arr.push(`${str[i]}${str[i+1]}`)
+    i=i+2
+  }
+    else{
+      arr.push(`0x${str[i]}${str[i+1]}`)
+    }
+  arr.forEach(item=>{
+    let it = parseInt(item, 10)
+    arr.shift(item)
+    arr.push(it)
+  })
+
+  if(arr.includes(NaN)){
+    return false
+  }
+  return true
+
+}}
