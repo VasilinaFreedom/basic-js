@@ -25,6 +25,10 @@ module.exports = {
 function transform(arr){
 
   if(!Array.isArray(arr)){throw Error("'arr' parameter must be an instance of the Array!")}
+//   arr.forEach((item=>{
+//     if(typeof item!='string'){return arr}
+//  })
+if(arr[0]===undefined){return arr}
   let arr1=[]
   let arr2= arr1.concat(arr)
   let newArr=[]
@@ -40,9 +44,7 @@ function transform(arr){
       item=arr2[i+1]
       newArr.push(item)
     }else if(item=='--discard-prev'){
-      // arr2[i-1]='prev'
-      // newArr.push(item)
-      // newArr.pop(item)
+   
       newArr.pop(item)
     }else{
       newArr.push(item)

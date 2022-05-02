@@ -24,5 +24,5 @@ function getMatrixElementsSum(/* matrix */) {
 module.exports = {
   getMatrixElementsSum
 };
-function getMatrixElementsSum(matrix) {
-}
+// function getMatrixElementsSum(matrix) {
+// }
